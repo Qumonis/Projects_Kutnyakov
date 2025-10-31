@@ -24,7 +24,6 @@ if N <= 0:
 else:
     # Вычисление приближенного значения sin(x)
     result = 0
-    print("Вычисление ряда:")
 
     for i in range(N):
         # Вычисляем степень: 1, 3, 5, 7, ...
@@ -38,13 +37,6 @@ else:
         # Вычисляем член ряда: (-1)^i * x^(2i+1) / (2i+1)!
         t = ((-1) ** i) * (X ** stepen) / factorial
         result += t
-
-        # Вывод текущего члена ряда
-        sign = "+" if ((-1) ** i) > 0 else "-"
-        if i == 0:
-            print(f"x", end="")
-        else:
-            print(f" {sign} x^{stepen}/{stepen}!", end="")
 
     print(f"\n\nПриближенное значение sin({X}) = {result}")
 
