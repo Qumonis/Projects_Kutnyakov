@@ -26,17 +26,14 @@ else:
     result = 0
     print("Вычисление ряда:")
 
-    # Вычисляем степень: 1, 3, 5, 7, ...
-    i = 1; stepen = 1
-    while i <= N:
-        i += 1
-        stepen += 2
+    for i in range(N):
+        # Вычисляем степень: 1, 3, 5, 7, ...
+        stepen = 2 * i + 1
 
         # Вычисляем факториал для знаменателя
         factorial = 1
-        while stepen:
-            factorial *= stepen
-        stepen -= 1
+        for j in range(1, stepen + 1):
+            factorial *= j
 
         # Вычисляем член ряда: (-1)^i * x^(2i+1) / (2i+1)!
         t = ((-1) ** i) * (X ** stepen) / factorial
