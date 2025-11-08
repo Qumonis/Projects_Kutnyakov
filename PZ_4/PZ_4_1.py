@@ -25,18 +25,26 @@ else:
     # Вычисление приближенного значения sin(x)
     result = 0
 
-    for i in range(N):
-        # Вычисляем степень: 1, 3, 5, 7, ...
-        stepen = 2 * i + 1
+    n = int(input("Введите n: "))
+    stepen = 1
+    i = 0
 
-        # Вычисляем факториал для знаменателя
+    while stepen <= N:
+        # Вычисляем факториал для текущего нечётного числа
         factorial = 1
-        for j in range(1, stepen + 1):
-            factorial *= j
+        temp = stepen
+        i += 1
+        print('bykva', i)
+        while temp > 0:
+            factorial *= temp
+            temp -= 1
+
+        # Переходим к следующему нечётному числу
+        stepen += 2
 
         # Вычисляем член ряда: (-1)^i * x^(2i+1) / (2i+1)!
         t = ((-1) ** i) * (X ** stepen) / factorial
         result += t
 
-    print(f"\n\nПриближенное значение sin({X}) = {result}")
+    print(f"Приближенное значение sin({X}) = {result}")
 
