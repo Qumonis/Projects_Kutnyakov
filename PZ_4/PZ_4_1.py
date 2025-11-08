@@ -12,7 +12,7 @@ while type(N) != int:  #Обработка исключений
         print("Не то ввел")
         N = input("Введите целое число N (> 0): ")
 
-while type(X) != float:
+while type(X) != float:  #Обработка исключений
     try:
         X = float(X)
     except ValueError:
@@ -24,27 +24,22 @@ if N <= 0:
 else:
     # Вычисление приближенного значения sin(x)
     result = 0
-
-    n = int(input("Введите n: "))
     stepen = 1
-    i = 0
+    i = 1
 
-    while stepen <= N:
+    while i <= N:
         # Вычисляем факториал для текущего нечётного числа
         factorial = 1
         temp = stepen
         i += 1
-        print('bykva', i)
+
         while temp > 0:
             factorial *= temp
             temp -= 1
-
         # Переходим к следующему нечётному числу
-        stepen += 2
-
-        # Вычисляем член ряда: (-1)^i * x^(2i+1) / (2i+1)!
         t = ((-1) ** i) * (X ** stepen) / factorial
         result += t
+        stepen += 2
 
     print(f"Приближенное значение sin({X}) = {result}")
 
