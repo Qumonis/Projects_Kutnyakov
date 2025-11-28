@@ -2,30 +2,32 @@
 #результата вновь вычли сумму его цифр и т. д. Через сколько таких действий
 #получится нуль?
 
-def kolvo_vichitaniy(n):
+def vych(num):
 
     def summa(num):
-        #вычисление суммы цифр числа
-        if num == 0:
-            return 0
-        return (num % 10) + summa(num // 10)
+        f = 0
+        num = str(num)
+        for i in num:
+            i = int(i)
+            f += i
+        return f
 
-    def vichitanie(num, count):
-        #подсчет количества вычитаний
-        if num == 0:
-            return count
-        digit_sum = summa(num)
-        return vichitanie(num - digit_sum, count + 1)
+    g = 0
 
-    return vichitanie(n, 0)
+    while num != 0:
+        num -= summa(num)
+        g += 1
 
-test_number = input('Введите число: ')
+    return g
 
-while type(test_number) != int: # обработка исключений
+b = input('Введите число: ')
+
+while type(b) != int: # Обработка исключений
+
     try:
-        test_number = int(test_number)
+        b = int(b)
     except ValueError:
-        print("Неправильно ввели!")
+        print('Не то ввёл')
+        b = input('Введите число: ')
 
-result = kolvo_vichitaniy(test_number)
-print(f"Число {test_number}: получим 0 через {result} действий")
+print(f'Через {vych(b)} действий получится 0')
