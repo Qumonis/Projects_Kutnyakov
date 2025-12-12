@@ -32,6 +32,6 @@ else:
     for i in range(n):
         i += 1
         c.append(random.randint(0, 5))
-    b = c[c.index(k):c.index(l) + 1]
-    b = sum(b)
-    print(b)
+    v = c[c.index(k):c.index(l) + 1]
+    v = sum(v)
+    print(v)

@@ -12,7 +12,7 @@ while type(n) != int:  # Обработка исключений
 
 c = []
 b = []
-f = 0
+v = 0
 for i in range(n):
     i += 1
     c.append(random.randint(0, 5))
@@ -20,6 +20,6 @@ for i in range(n):
 for j in c:
     if j not in b:
         b.append(j)
-        f += 1
+        v += 1
 
-print(f)
+print(v)
