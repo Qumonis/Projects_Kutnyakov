@@ -34,5 +34,4 @@ else:
         c.append(random.randint(0, 5))
     b = c[c.index(k):c.index(l) + 1]
     b = sum(b)
-    print(c)
     print(b)
