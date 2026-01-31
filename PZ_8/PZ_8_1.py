@@ -1,7 +1,6 @@
 #Выведите все ключи и значения через цикл.
 #d = {'Red':1, 'Green':2}
 d = {'Red':1, 'Green':2}
-for i in d.items():
-    for j in i:
-        print(j)
+for key, value in d.items():
+    print(key, value, sep="\n")
 print(d)
