@@ -5,6 +5,6 @@ b = {}
 c = 0
 for i in d.split():
     c += 1
-    b[i] = c
+    b[c] = i
 print(d)
 print(b)
