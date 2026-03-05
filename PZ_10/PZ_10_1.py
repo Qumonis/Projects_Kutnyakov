@@ -9,11 +9,11 @@
 
 import random
 
-s = ''
+k = ''
 
 for i in range(random.randint(5, 11)):
-    s += str(random.randint(-5, 5)) + ' '
-l = [s]
+    k += str(random.randint(-5, 5)) + ' '
+l = [k]
 
 f1 = open('data.txt', 'w')
 f1.writelines(l)
