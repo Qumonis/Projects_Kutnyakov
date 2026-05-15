@@ -3,6 +3,22 @@
 #который поместить текст в стихотворной форме предварительно заменив символы верхнего
 #регистра на нижний.
 
-f1 = open('text18-19.txt')
-f1.read()
+f1 = open('text18-19.txt', encoding='utf-16')
+k = f1.read()
+a = 0
+for i in k:
+    if i in 'абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ':
+        a += 1
+    else: continue
+print(k, '\n')
+print('Количество символов, принадлежащих к группе букв =', a, '\n')
 f1.close()
+
+f2 = open('alttext', 'w')
+k = k.lower()
+f2.writelines(k)
+f2.close()
+
+f2 = open('alttext')
+print(f2.read())
+f2.close()
